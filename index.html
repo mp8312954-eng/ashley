@@ -124,5 +124,158 @@ document.getElementById('musicBtn').addEventListener('click',()=>{
  else if(url) alert('Usa un enlace que empiece por https://');
 });
 </script>
+ 
+<style>
+  #portada-ashley {
+    min-height: 90vh;
+    padding: 35px 18px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff0fb;
+    font-family: Georgia, serif;
+    background:
+      radial-gradient(ellipse at top, #58376f 0%, transparent 55%),
+      linear-gradient(160deg, #100d25, #281637, #100d25);
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #portada-ashley .estrellas {
+    font-size: 19px;
+    letter-spacing: 10px;
+    color: #ffe5fa;
+    animation: brillar-ashley 2s infinite alternate;
+  }
+
+  #portada-ashley h1 {
+    font-size: 34px;
+    color: #ffd5f1;
+    margin: 22px 0 12px;
+  }
+
+  #portada-ashley .intro {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  #portada-ashley .sobre {
+    border: 1px solid #f7c8e8;
+    border-radius: 15px;
+    background: #f8ddeb;
+    color: #78365f;
+    padding: 22px;
+    width: min(250px, 80%);
+    cursor: pointer;
+    box-shadow: 0 0 25px #e9a5e655;
+    font-family: Georgia, serif;
+    font-size: 17px;
+  }
+
+  #portada-ashley .sobre .icono {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  #portada-ashley .carta {
+    display: none;
+    margin-top: 24px;
+    max-width: 460px;
+    padding: 22px;
+    border-radius: 15px;
+    background: #fff5fa;
+    color: #57324d;
+    line-height: 1.9;
+    font-size: 16px;
+    animation: aparecer-ashley 1s ease;
+  }
+
+  #portada-ashley .carta h2 {
+    color: #a14e83;
+  }
+
+  #portada-ashley .carta.abierta {
+    display: block;
+  }
+
+  #portada-ashley .firma {
+    color: #a14e83;
+    font-style: italic;
+  }
+
+  @keyframes brillar-ashley {
+    from { opacity: .55; }
+    to { opacity: 1; }
+  }
+
+  @keyframes aparecer-ashley {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<section id="portada-ashley">
+  <div class="estrellas">✧ ⋆ ✦ ⋆ ✧</div>
+
+  <h1>Para ti, Ashley ♡</h1>
+
+  <p class="intro">
+    Tengo algo muy especial para ti...<br>
+    Algo que nace desde lo más sincero de mi corazón.
+  </p>
+
+  <button
+    class="sobre"
+    type="button"
+    onclick="
+      const carta = document.getElementById('carta-ashley');
+      carta.classList.toggle('abierta');
+      this.innerText = carta.classList.contains('abierta')
+        ? '💌 Cerrar cartita'
+        : '💌 Abrir tu cartita';
+    "
+  >
+    <span class="icono">💌</span>
+    Una cartita para ti
+    <br>
+    <small>Tócame para descubrirla ♡</small>
+  </button>
+
+  <article id="carta-ashley" class="carta">
+    <h2>Mi querida Ashley ♡</h2>
+
+    <p>
+      No sé si el universo tenía preparado nuestro encuentro,
+      pero sí sé que, desde que llegaste a mi vida,
+      hay momentos que brillan de una manera diferente.
+    </p>
+
+    <p>
+      No quiero que nunca dudes de lo especial que eres
+      para mí; porque, entre tantas personas en este mundo,
+      mi corazón encontró en ti una razón más para sonreír.
+    </p>
+
+    <p>
+      Mereces un amor que te cuide, te escuche y te recuerde
+      cada día lo maravillosa que eres.
+    </p>
+
+    <p class="firma">
+      Con mucho cariño, para alguien irreemplazable ♡
+    </p>
+  </article>
+
+  <div class="estrellas" style="margin-top: 30px">
+    ♡ ✧ ♡ ✧ ♡
+  </div>
+</section>
+ 
 </body>
 </html>
